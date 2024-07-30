@@ -6,6 +6,8 @@ elements.beryllium = {
     viscosity: 100000,
     state: "solid",
     density: 720,
+    reactions: {
+        "water": {elem1: null, elem2: "dirty_water"}
 };
 
 // Changing existing elements:
