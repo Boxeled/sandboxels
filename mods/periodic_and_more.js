@@ -7,7 +7,8 @@ elements.beryllium = {
     state: "solid",
     density: 720,
     reactions: {
-        water: {elem1: "beryllium", elem2: "dirty_water"}
+          water: { "elem1":"beryllium", "elem2":"dirty_water" }
+    }
 };
 
  elements.galinstan = {
@@ -18,6 +19,16 @@ elements.beryllium = {
      state: "liquid",
      density: 0.026
  };
+
+ elements.stickium = {
+     color: "#fcac0a",
+     behavior: [
+         ["SA","SA","SA"],
+         ["SA","XX","SA"],
+         ["SA","SA","SA"]
+         ],
+     category: "chemosophic",
+     state: liquid
      
 
 // Adding behavior presets:
@@ -52,10 +63,10 @@ if (!elements.water.reactions) { // Include this block once
 }
 elements.water.reactions.mayo = { "elem1":null, "elem2":"mayo_water" }
 elements.water.reactions.soap = { "elem1":null, "elem2":"soapy_water" }
+elements.water.reactions.beryllium = { "elem1":null, "elem2":"dirty_water" }
 
 // Run after all mods are loaded, for cross-mod compatibility
 runAfterLoad(function() {
-    
     console.log("Hello World!");
 });
 
@@ -66,4 +77,5 @@ if (enabledMods.includes["mods/chem.js", "mods/moreChemistry.js", "mods/metals.j
 }
 
 // Creating eLists:
-eLists.PERIODIC = ["beryllium", "scandium", "vanadium", "manganese", "cobalt"]
+eLists.PERIOD1 = ["hydrogen", "helium"]
+eLists.PERIOD2 = ["lithium", "beryllium", "boron", "carbon", "nitrogen", "oxygen", "fluorine", "neon"]
